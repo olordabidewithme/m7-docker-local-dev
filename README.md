@@ -9,12 +9,12 @@ Run Node.js application locally.
 Run MongoDB database container locally.
 Also run MongoExpress container as a UI for the database.
 
-Create Network
+Step 1 : Create Network
 ```bash
 docker network create mongo-network
 ```
 
-Run MongoDB Container
+Step 2 : Run MongoDB Container
 
 ```bash
 docker run -d \
@@ -25,7 +25,7 @@ docker run -d \
 --net mongo-network \
 mongo
 ```
-Run Mongo Express
+Step 3 : Run Mongo Express
 
 ```bash
 docker run -d \
@@ -40,4 +40,18 @@ docker run -d \
 -e ME_CONFIG_MONGODB_URL=mongodb://mongodb:27017 \
 mongo-express
 ```
+Step 4 : Open Mongo Express UI
+```bash
+http://localhost:3000
+```
 
+Step 5 : Create a new database "user-account"
+
+Step 6 : Create a new collection "users"
+
+Step 7 : Start Node Server
+```bash
+cd app
+npm install
+node server.js
+```
